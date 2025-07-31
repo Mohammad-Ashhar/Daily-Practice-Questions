@@ -1,0 +1,30 @@
+// Last updated: 31/07/2025, 21:17:05
+class Solution {
+    public int integerBreak(int n) {
+        if(n==2)
+        {
+            return 1;
+        }
+        if(n==3)
+        {
+            return 2;
+        }
+        if(n>3)
+        {
+            if(n%3==1)
+            {
+                return ((int)Math.pow(3,n/3 -1) * 4);
+            }
+            if(n%3==2)
+            {
+                return ((int)Math.pow(3,n/3) * 2);
+            }
+            if(n%3==0)
+            {
+                return ((int)Math.pow(3,n/3));
+            }
+        }
+        return 0;
+        
+    }
+}
