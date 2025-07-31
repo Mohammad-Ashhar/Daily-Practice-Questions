@@ -1,0 +1,30 @@
+// Last updated: 31/07/2025, 21:14:39
+class Solution {
+    public int binaryGap(int n) {
+        int gap = 0;
+        int distance = 0; 
+        boolean found = false;
+
+        while ( n != 0 ) {
+  
+            if (found == true) distance++;
+
+            if ( (n & 1) != 0) {
+                found = true; 
+                 
+            }
+
+            if ( (n & 1) != 0 && found == true) {
+                
+                if (gap <= distance) gap = distance;
+                distance = 0; 
+            }
+
+
+            n = n >> 1;
+
+        }
+        return gap;
+           
+    }
+}
